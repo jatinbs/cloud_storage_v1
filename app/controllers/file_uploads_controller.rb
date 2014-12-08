@@ -24,24 +24,12 @@ class FileUploadsController < ApplicationController
   # POST /file_uploads
   # POST /file_uploads.json
   def create
+    user_id = 1
     name = params[:upload_file].original_filename
-    directory = "public/uploads/"
+    directory = "uploads/"
     path = File.join(directory, name)
     File.open(path, "wb") { |f| f.write(params[:upload_file].read)}
     render plain: 'done bitch';
-    # render plain: params
-
-    # @file_upload = FileUpload.new(file_upload_params)
-    #
-    # respond_to do |format|
-    #   if @file_upload.save
-    #     format.html { redirect_to @file_upload, notice: 'File upload was successfully created.' }
-    #     format.json { render :show, status: :created, location: @file_upload }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @file_upload.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /file_uploads/1
