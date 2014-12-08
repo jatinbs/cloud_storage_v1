@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :file_uploads
+
   get 'sessions/new'
 
   root 'static_pages#home'
