@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  resources :file_uploads
 
   get 'sessions/new'
 
   root 'static_pages#home'
-
   get '/about' => 'static_pages#about'
   get 'signup' => 'users#new'
 
@@ -12,8 +10,9 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  resources :microposts
 
+  resources :file_uploads
+  resources :microposts
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
