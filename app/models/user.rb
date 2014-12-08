@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   has_many :microposts, dependent: :destroy
   has_many :file_uploads
 
@@ -7,4 +8,5 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, length: {minimum: 6}
+
 end
