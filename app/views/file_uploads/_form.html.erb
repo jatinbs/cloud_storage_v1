@@ -1,33 +1,4 @@
-<%= form_for(@file_upload) do |f| %>
-  <% if @file_upload.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@file_upload.errors.count, "error") %> prohibited this file_upload from being saved:</h2>
-
-      <ul>
-      <% @file_upload.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :file_name %><br>
-    <%= f.text_field :file_name %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :file_path %><br>
-    <%= f.text_field :file_path %>
-  </div>
-  <div class="field">
-    <%= f.label :mime_type %><br>
-    <%= f.text_field :mime_type %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= form_tag({action: :create}, multipart: true) do |f| %>
+    <%= file_field_tag 'upload_file' %>
+    <%= submit_tag %>
 <% end %>
