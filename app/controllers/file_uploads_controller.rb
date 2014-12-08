@@ -17,10 +17,6 @@ class FileUploadsController < ApplicationController
     @file_upload = FileUpload.new
   end
 
-  # GET /file_uploads/1/edit
-  def edit
-  end
-
   # POST /file_uploads
   # POST /file_uploads.json
   def create
@@ -38,20 +34,6 @@ class FileUploadsController < ApplicationController
           format.html { render :new }
           format.json { render json: @file_upload.errors, status: :unprocessable_entity }
         end
-      end
-    end
-  end
-
-  # PATCH/PUT /file_uploads/1
-  # PATCH/PUT /file_uploads/1.json
-  def update
-    respond_to do |format|
-      if @file_upload.update(file_upload_params)
-        format.html { redirect_to @file_upload, notice: 'File upload was successfully updated.' }
-        format.json { render :show, status: :ok, location: @file_upload }
-      else
-        format.html { render :edit }
-        format.json { render json: @file_upload.errors, status: :unprocessable_entity }
       end
     end
   end

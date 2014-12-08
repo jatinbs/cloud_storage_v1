@@ -25,9 +25,6 @@
   <%= @file_upload.file_hash %>
 </p>
 <p>
-  <strong>Download Link:</strong>
-  <%= link_to "dude", download_path(@file_upload.file_hash) %>
+  <%= link_to "Download", download_path(@file_upload.file_hash), class: 'btn btn-success' %>
 </p>
-
-<%= link_to 'Edit', edit_file_upload_path(@file_upload) %> |
 <%= link_to 'Back', file_uploads_path %>
