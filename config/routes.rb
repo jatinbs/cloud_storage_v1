@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :file_uploads, only: [:new, :create, :destroy, :index, :show]
   resources :microposts
-  resources :users
+  resources :users, except: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
