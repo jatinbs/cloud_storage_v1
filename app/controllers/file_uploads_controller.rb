@@ -1,5 +1,6 @@
 class FileUploadsController < ApplicationController
-  before_action :set_file_upload, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate?
+  before_action :set_file_upload, only: [:show, :destroy]
 
   # GET /file_uploads
   # GET /file_uploads.json
