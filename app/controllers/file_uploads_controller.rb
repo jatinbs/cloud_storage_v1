@@ -86,7 +86,8 @@ class FileUploadsController < ApplicationController
         file_name: og_file.original_filename,
         user_id: 1,
         file_path: "uploads/#{filename}",
-        mime_type: og_file.content_type
+        mime_type: og_file.content_type,
+        file_hash: filename
       }
       return file_upload_params
     end
