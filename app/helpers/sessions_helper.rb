@@ -30,4 +30,17 @@ module SessionsHelper
     end
   end
 
+  def current_user? user
+    authenticate?
+    if current_user.id != user.id
+      redirect_to current_user
+    end
+  end
+
+  def guest?
+    if logged_in?
+      redirect_to current_user
+    end
+  end
+
 end
