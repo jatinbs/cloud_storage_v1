@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  #download file
+  get 'download/:file_hash' => 'downloads#download_page', as: 'download'
+  post 'download/:file_hash' => 'downloads#download_file'
+
   resources :file_uploads
   resources :microposts
   resources :users

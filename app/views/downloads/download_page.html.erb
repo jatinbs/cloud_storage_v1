@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="well">
+      <p>
+        You've chosen to downlaod <%= @file_upload.file_name %>.
+      </p>
+      <p>
+        Your download should start automatically.
+      </p>
+      <%= form_tag download_path(@file_upload.file_hash), id: 'download-file' do |f| %>
+
+      <% end %>
+      <script>
+        jQuery(document).ready(function() {
+            jQuery('#download-file').submit();
+        });
+      </script>
+    </div>
+  </div>
+</div>
