@@ -41,3 +41,4 @@ gem 'uuid', '~> 2.3.7'
 
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
+gem 'font-awesome-sass'
