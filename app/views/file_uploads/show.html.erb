@@ -1,44 +1,22 @@
 <% provide(:title, @file_upload.file_name) %>
+<p id="notice"><%= notice %></p>
 <div class="row">
   <div class="col-sm-12">
     <div class="jumbotron text-center">
-      <%= icon('file') %>
+      <%= icon 'file', '', class: 'fa-5x' %>
+      <h2>
+        <%= @file_upload.file_name %>
+      </h2>
+      <p>
+        <%= @file_upload.mime_type %>
+      </p>
+      <p>
+        <%= number_to_human_size(@file_upload.size) %>
+      </p>
+      <p>
+        <%= link_to "Download", download_path(@file_upload.file_hash), class: 'btn btn-success btn-lg' %>
+      </p>
     </div>
   </div>
 </div>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>File name:</strong>
-  <%= @file_upload.file_name %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @file_upload.user_id %>
-</p>
-
-<p>
-  <strong>File path:</strong>
-  <%= @file_upload.file_path %>
-</p>
-
-<p>
-  <strong>Mime type:</strong>
-  <%= @file_upload.mime_type %>
-</p>
-
-<p>
-  <strong>File Hash:</strong>
-  <%= @file_upload.file_hash %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @file_upload.size %>
-</p>
-
-<p>
-  <%= link_to "Download", download_path(@file_upload.file_hash), class: 'btn btn-success' %>
-</p>
 <%= link_to 'Back', file_uploads_path %>
