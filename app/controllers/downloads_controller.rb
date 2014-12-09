@@ -6,7 +6,11 @@ class DownloadsController < ApplicationController
   end
 
   def download_page
-    @file_upload = FileUpload.find_by file_hash: params[:file_hash]
+    if(!request.xhr?)
+      @file_upload = FileUpload.find_by file_hash: params[:file_hash]
+    else
+      render status: 404
+    end
   end
 
 end
