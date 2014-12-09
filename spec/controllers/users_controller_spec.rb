@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe UsersController, :type => :controller do
 
+  fixtures :all
+
   before do
     @valid_attributes = {
       name: 'test name',
@@ -10,7 +12,6 @@ RSpec.describe UsersController, :type => :controller do
       password_confirmation: 'test123'
     }
   end
-
 
   describe "GET new" do
     it "returns http success" do
