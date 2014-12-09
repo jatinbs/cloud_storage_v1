@@ -32,7 +32,7 @@ module SessionsHelper
 
   def current_user? user
     authenticate?
-    if current_user.id != user.id
+    if current_user && current_user.id != user.id
       redirect_to current_user
     end
   end

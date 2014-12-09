@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  before_save {self.email = email.downcase}
+
   has_many :microposts, dependent: :destroy
   has_many :file_uploads
 
