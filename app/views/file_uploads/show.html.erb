@@ -24,6 +24,12 @@
   <strong>File Hash:</strong>
   <%= @file_upload.file_hash %>
 </p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @file_upload.size %>
+</p>
+
 <p>
   <%= link_to "Download", download_path(@file_upload.file_hash), class: 'btn btn-success' %>
 </p>

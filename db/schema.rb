@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208092035) do
+ActiveRecord::Schema.define(version: 20141209080424) do
 
   create_table "file_uploads", force: true do |t|
     t.string   "file_name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20141208092035) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "file_hash"
+    t.integer  "size"
   end
 
   create_table "microposts", force: true do |t|

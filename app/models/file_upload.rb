@@ -20,6 +20,7 @@ class FileUpload < ActiveRecord::Base
     self.file_path = "uploads/#{file_hash}"
     self.mime_type = self.upload_file.content_type
     self.file_hash = file_hash
+    self.size = File.size(self.upload_file.tempfile.path).to_i
   end
 
   def save_file
