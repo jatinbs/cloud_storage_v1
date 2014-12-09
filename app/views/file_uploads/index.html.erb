@@ -1,5 +1,4 @@
-
-
+<% provide(:title, "Files") %>
 <div class="row">
   <div class="col-sm-8">
     <h1>Files</h1>
@@ -13,9 +12,8 @@
   <thead>
     <tr>
       <th>File name</th>
-      <th>User</th>
-      <th>File path</th>
-      <th>Mime type</th>
+      <th>Size</th>
+      <th>Created</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -24,9 +22,8 @@
     <% @file_uploads.each do |file_upload| %>
       <tr>
         <td><%= file_upload.file_name %></td>
-        <td><%= file_upload.user_id %></td>
-        <td><%= file_upload.file_path %></td>
-        <td><%= file_upload.mime_type %></td>
+        <td><%= number_to_human_size(file_upload.size) %></td>
+        <td><%= time_ago_in_words(file_upload.created_at) %> ago</td>
         <td><%= link_to 'Show', file_upload %></td>
         <td><%= link_to 'Destroy', file_upload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
