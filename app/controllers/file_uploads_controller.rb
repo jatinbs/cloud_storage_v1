@@ -5,8 +5,7 @@ class FileUploadsController < ApplicationController
   # GET /file_uploads
   # GET /file_uploads.json
   def index
-    @file_uploads = FileUpload.all
-    # @file_uploads = current_user.file_uploads.all
+    @file_uploads = current_user.file_uploads.all
   end
 
   # GET /file_uploads/1
