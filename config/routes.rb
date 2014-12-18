@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :test_objects
+
   get 'sessions/new'
 
   root 'static_pages#home'

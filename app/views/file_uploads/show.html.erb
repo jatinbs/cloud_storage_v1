@@ -1,22 +1,27 @@
 <% provide(:title, @file_upload.file_name) %>
-<p id="notice"><%= notice %></p>
-<div class="row">
-  <div class="col-sm-12">
-    <div class="jumbotron text-center">
-      <%= icon 'file', '', class: 'fa-5x' %>
-      <h2>
-        <%= @file_upload.file_name %>
-      </h2>
-      <p>
-        <%= @file_upload.mime_type %>
-      </p>
-      <p>
-        <%= number_to_human_size(@file_upload.size) %>
-      </p>
-      <p>
-        <%= link_to "Download", download_path(@file_upload.file_hash), class: 'btn btn-success btn-lg' %>
-      </p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12"><p id="notice"><%= notice %></p>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="jumbotron text-center">
+            <%= icon 'file', '', class: 'fa-5x' %>
+            <h2>
+              <%= @file_upload.file_name %>
+            </h2>
+            <p>
+              <%= @file_upload.mime_type %>
+            </p>
+            <p>
+              <%= number_to_human_size(@file_upload.size) %>
+            </p>
+            <p>
+              <%= link_to "Download", download_path(@file_upload.file_hash), class: 'btn btn-success btn-lg' %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <%= link_to 'Back', file_uploads_path %>
     </div>
   </div>
 </div>
-<%= link_to 'Back', file_uploads_path %>
